@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>circle-fill</title>
+  <title>circle-stroke</title>
   <style>
     #canvas {
       background-color: #000;
@@ -19,10 +19,9 @@
     canvas.width = 400;
 
     context.beginPath();
-    context.arc(100, 100, 50, 0, Math.PI * 2, true);
-    context.closePath();
-    context.fillStyle = '#fff';
-    context.fill();
+    context.arc(100, 100, 50, 0, Math.PI * 0.5, false);
+    context.strokeStyle = 'white';
+    context.stroke();
   </script>
 </body>
 </html>
