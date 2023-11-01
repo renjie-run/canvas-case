@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>line-multiple</title>
+  <title>line-width</title>
   <style>
     #canvas {
       background-color: #000;
@@ -18,12 +18,11 @@
     canvas.height = 400;
     canvas.width = 400;
 
+    context.lineWidth = 15;
+
     context.beginPath();
-    context.moveTo(100, 50);
-    context.lineTo(150, 100);
-    context.lineTo(100, 150);
-    context.lineTo(150, 200);
-    context.lineTo(100, 250);
+    context.moveTo(100, 100); // move pencil
+    context.lineTo(200, 200);
     context.strokeStyle = '#fff';
     context.stroke();
   </script>

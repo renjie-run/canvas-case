@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>line-multiple</title>
+  <title>line-cap</title>
   <style>
     #canvas {
       background-color: #000;
@@ -17,15 +17,16 @@
     const context = canvas.getContext('2d');
     canvas.height = 400;
     canvas.width = 400;
+    context.lineWidth = 15;
 
-    context.beginPath();
-    context.moveTo(100, 50);
-    context.lineTo(150, 100);
-    context.lineTo(100, 150);
-    context.lineTo(150, 200);
-    context.lineTo(100, 250);
-    context.strokeStyle = '#fff';
-    context.stroke();
+    ['butt', 'round', 'square'].forEach((cap, index) => {
+      context.lineCap = cap;
+      context.beginPath();
+      context.moveTo(50, 50 * (index + 1));
+      context.lineTo(200, 50 * (index + 1));
+      context.strokeStyle = '#fff';
+      context.stroke();
+    });
   </script>
 </body>
 </html>
