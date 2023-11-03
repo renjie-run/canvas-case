@@ -6,7 +6,7 @@
 |----|----|
 |drawImage()|向画布上绘制图像、画布或视频|
 
-## context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+## context.drawImage(img, sx, sy, swidth, sheight, x, y, width, height);
 
 - img，规定要使用的图像、画布或视频
 - sx，可选。开始剪切的 x 坐标位置
