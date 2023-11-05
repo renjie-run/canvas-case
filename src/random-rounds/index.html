@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>random-rounds</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.querySelector('#canvas');
+    const context = canvas.getContext('2d');
+    const docWidth = document.documentElement.clientWidth;
+    const docHeight = document.documentElement.clientHeight;
+    const INIT_ROUND_POPULATION = 200;
+    canvas.width = docWidth;
+    canvas.height = docHeight;
+
+    function RoundGenerator(x, y) {
+      this.x = x;
+      this.y = y;
+      this.r = Math.random() * 2 + 1;
+
+      const alpha = (Math.floor(Math.random() * 10) + 1) / 10 / 2;
+      this.color = `rgba(255, 255, 255, ${alpha})`;
+
+      this.draw = function() {
+        context.fillStyle = '#fff';
+        context.shadowBlur = this.r * 2;
+        context.beginPath();
+        context.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+        context.closePath();
+        context.fill();
+      };
+    }
+
+    function createRounds() {
+      let rounds = [];
+      for (let i = 0; i < INIT_ROUND_POPULATION; i++) {
+        rounds[i] = new RoundGenerator(Math.random() * docWidth, Math.random() * docHeight);
+        rounds[i].draw();
+      }
+    }
+
+    createRounds();
+  </script>
+</body>
+</html>
