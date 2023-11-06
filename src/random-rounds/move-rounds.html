@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>random-rounds</title>
+  <title>move-random-rounds</title>
   <style>
     html, body {
       width: 100%;
@@ -24,6 +24,7 @@
     const INIT_ROUND_POPULATION = 200;
     canvas.width = docWidth;
     canvas.height = docHeight;
+    let rounds = [];
 
     function RoundGenerator(x, y) {
       this.x = x;
@@ -32,6 +33,7 @@
 
       const alpha = (Math.floor(Math.random() * 10) + 1) / 10 / 2;
       this.color = `rgba(255, 255, 255, ${alpha})`;
+      console.log(this.color)
 
       this.draw = function() {
         context.fillStyle = this.color;
@@ -41,17 +43,32 @@
         context.closePath();
         context.fill();
       };
+      this.move = function() {
+        this.y -= 0.15;
+        if (this.y <= -10) {
+          this.y = docHeight + 10;
+        }
+        this.draw();
+      };
     }
 
     function createRounds() {
-      let rounds = [];
       for (let i = 0; i < INIT_ROUND_POPULATION; i++) {
         rounds[i] = new RoundGenerator(Math.random() * docWidth, Math.random() * docHeight);
         rounds[i].draw();
       }
     }
 
+    function animate() {
+      context.clearRect(0, 0, docWidth, docHeight);
+      for (let i = 0; i < INIT_ROUND_POPULATION; i++) {
+        rounds[i].move();
+      }
+      requestAnimationFrame(animate);
+    }
+
     createRounds();
+    animate();
   </script>
 </body>
 </html>
