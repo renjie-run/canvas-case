@@ -21,7 +21,7 @@ const draw = ({ canvas, canvasWrapper }) => {
 onMounted(() => {
   // const canvasWrapper = canvasWrapperRef.value;
   const canvas = canvasRef.value;
-  draw(canvas);
+  draw({ canvas });
 });
 </script>
 <template>
