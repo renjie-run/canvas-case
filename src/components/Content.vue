@@ -9,3 +9,9 @@ const props = defineProps({
 <template>
   <div class="content"><Canvas :type="props.type" /></div>
 </template>
+
+<style scoped>
+.content {
+  flex: 1;
+}
+</style>

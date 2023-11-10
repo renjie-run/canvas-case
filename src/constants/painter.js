@@ -17,3 +17,5 @@ export const DRAW_TYPE = {
   ROUNDS_FOLLOWING_MOUSE: 'rounds_following_mouse',
   CACHED_ROUNDS: 'cached_rounds',
 };
+
+export const DEFAULT_DRAW_TYPE = DRAW_TYPE.MOVING_ROUNDS;
