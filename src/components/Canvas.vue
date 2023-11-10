@@ -1,27 +1,27 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, onUpdated, ref } from 'vue';
+import { painter, clearCanvas } from '../painter';
+
+const props = defineProps({
+  type: String,
+});
+
 const canvasWrapperRef = ref(null);
 const canvasRef = ref(null);
 
-const draw = ({ canvas, canvasWrapper }) => {
-  if (!canvas) {
-    return;
-  }
-  canvas.height = 400;
-  canvas.width = 400;
-  const ctx = canvas.getContext('2d');
-
-  ctx.beginPath();
-  ctx.moveTo(100, 100); // move pencil
-  ctx.lineTo(200, 200);
-  ctx.strokeStyle = '#fff';
-  ctx.stroke();
-};
-
 onMounted(() => {
-  // const canvasWrapper = canvasWrapperRef.value;
+  const { type } = props;
+  const canvasWrapper = canvasWrapperRef.value;
   const canvas = canvasRef.value;
-  draw({ canvas });
+  painter({ type, canvas, canvasWrapper });
+});
+
+onUpdated(() => {
+  const { type } = props;
+  const canvasWrapper = canvasWrapperRef.value;
+  const canvas = canvasRef.value;
+  clearCanvas(canvas);
+  painter({ type, canvas, canvasWrapper });
 });
 </script>
 <template>
@@ -34,9 +34,5 @@ onMounted(() => {
 .canvas-wrapper {
   width: 100%;
   min-height: 100vh;
-}
-
-.canvas {
-  background-color: #000;
 }
 </style>
