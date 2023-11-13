@@ -1,7 +1,7 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
+import Sidebar from './components/Sidebar.vue';
 import Content from './components/Content.vue';
-import SideBarVue from './components/SideBar.vue';
 import { DRAW_TYPE, DEFAULT_DRAW_TYPE } from './constants/painter';
 
 let selectedType = ref(DEFAULT_DRAW_TYPE);
@@ -12,7 +12,7 @@ const handleChangeType = (type) => {
 
 <template>
   <div id="wrapper">
-    <SideBarVue @handleChangeType="handleChangeType" />
+    <Sidebar @handleChangeType="handleChangeType" />
     <Content :type="selectedType" />
   </div>
 </template>
