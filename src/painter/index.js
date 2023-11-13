@@ -7,16 +7,3 @@ export const painter = ({ type, canvas, ...restParams }) => {
   }
   draw({ canvas, ...restParams });
 };
-
-export const clearCanvas = (canvas) => {
-  if (!canvas) {
-    return;
-  }
-  const width = canvas.offsetWidth;
-  const height = canvas.offsetHeight;
-  const context = canvas.getContext('2d');
-  context.clearRect(0, 0, width, height)
-  canvas.width = 'unset';
-  canvas.height = 'unset';
-  canvas.style.backgroundColor = 'unset';
-};

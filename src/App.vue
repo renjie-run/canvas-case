@@ -12,7 +12,7 @@ const handleChangeType = (type) => {
 
 <template>
   <div id="wrapper">
-    <!-- <SideBarVue @handleChangeType="handleChangeType" /> -->
+    <SideBarVue @handleChangeType="handleChangeType" />
     <Content :type="selectedType" />
   </div>
 </template>

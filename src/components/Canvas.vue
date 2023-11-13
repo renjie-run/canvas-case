@@ -1,32 +1,39 @@
 <script setup>
-import { onMounted, onUpdated, ref } from 'vue';
-import { painter, clearCanvas } from '../painter';
+import { onMounted, ref, watch } from 'vue';
+import { painter } from '../painter';
 
 const props = defineProps({
   type: String,
 });
 
 const canvasWrapperRef = ref(null);
-const canvasRef = ref(null);
+
+const generateCanvas = () => {
+  canvasWrapperRef.value.innerHTML = '';
+  const canvas = document.createElement('canvas');
+  canvasWrapperRef.value.appendChild(canvas);
+  return canvas;
+}
 
 onMounted(() => {
   const { type } = props;
-  const canvasWrapper = canvasWrapperRef.value;
-  const canvas = canvasRef.value;
-  painter({ type, canvas, canvasWrapper });
+  const canvas = generateCanvas();
+  painter({ type, canvas, canvasWrapper: canvasWrapperRef.value });
 });
 
-onUpdated(() => {
-  const { type } = props;
-  const canvasWrapper = canvasWrapperRef.value;
-  const canvas = canvasRef.value;
-  clearCanvas(canvas);
-  painter({ type, canvas, canvasWrapper });
+watch(() => props.type, (currType, prevType) => {
+  if (currType !== prevType) {
+    const canvas = generateCanvas();
+    painter({
+      canvas,
+      canvasWrapper: canvasWrapperRef.value,
+      type: currType
+    });
+  }
 });
 </script>
 <template>
   <div class="canvas-wrapper" ref="canvasWrapperRef">
-    <canvas class="canvas" ref="canvasRef"></canvas>
   </div>
 </template>
 
