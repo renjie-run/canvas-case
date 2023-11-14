@@ -2,11 +2,11 @@
 import { ref } from 'vue';
 import Sidebar from './components/Sidebar.vue';
 import Content from './components/Content.vue';
-import { DRAW_TYPE, DEFAULT_DRAW_TYPE } from './constants/painter';
+import { DEFAULT_DRAW_TYPE } from './constants/painter';
 
 let selectedType = ref(DEFAULT_DRAW_TYPE);
 const handleChangeType = (type) => {
-  selectedType.value = DRAW_TYPE.LINE_SINGLE;
+  selectedType.value = type;
 };
 </script>
 
@@ -21,5 +21,6 @@ const handleChangeType = (type) => {
   #wrapper {
     display: flex;
     flex-direction: row;
+    height: 100%;
   }
 </style>

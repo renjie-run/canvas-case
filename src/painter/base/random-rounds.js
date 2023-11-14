@@ -100,8 +100,10 @@ export const movingRounds = ({ canvas, canvasWrapper }) => {
 };
 
 export const roundsFollowingMouse = ({ canvas, canvasWrapper }) => {
+  const docWidth = document.body.offsetWidth;
   const wrapperWidth = canvasWrapper.offsetWidth;
   const wrapperHeight = canvasWrapper.offsetHeight;
+  const xDistance = docWidth - wrapperWidth;
   canvas.width = wrapperWidth;
   canvas.height = wrapperHeight;
   canvas.style.backgroundColor = '#000';
@@ -123,7 +125,7 @@ export const roundsFollowingMouse = ({ canvas, canvasWrapper }) => {
   }
 
   window.onmousemove = function(evt) {
-    const mouseX = evt.clientX;
+    const mouseX = evt.clientX - xDistance;
     const mouseY = evt.clientY;
 
     rounds.push({
