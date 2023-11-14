@@ -37,7 +37,7 @@ const menus = [
     <li class="menu" v-for="menu in menus" :key="menu.key">
       <div class="menu-title">{{menu.name}}</div>
       <ul class="sub-menus" v-if="menu.examples && menu.examples.length > 0">
-        <li class="sub-menu" v-for="example in menu.examples" :key="example.key" @click="$emit('handleChangeType', example.key)">
+        <li class="sub-menu" v-for="example in menu.examples" :key="example.key" @click="$emit('handleChangeType', example.key, example.name)">
           <div class="menu-title">{{example.name}}</div>
         </li>
       </ul>

@@ -1,0 +1,5 @@
+const meteorsAndStars = () => {
+
+};
+
+export { meteorsAndStars };
