@@ -6,6 +6,7 @@ import {
 import { styleCreateLinearGradient, styleShadow } from './base/style-uses';
 import { transRotate, transScale } from './base/trans-uses';
 import { cachedRounds, movingRounds, randomRounds, roundsFollowingMouse } from './base/random-rounds';
+import { meteorsAndStars } from './cases/meteors-stars';
 
 let availableOperators = Object.create(null);
 
@@ -29,5 +30,6 @@ registerOperator(DRAW_TYPE.RANDOM_ROUNDS, randomRounds);
 registerOperator(DRAW_TYPE.MOVING_ROUNDS, movingRounds);
 registerOperator(DRAW_TYPE.ROUNDS_FOLLOWING_MOUSE, roundsFollowingMouse);
 registerOperator(DRAW_TYPE.CACHED_ROUNDS, cachedRounds);
+registerOperator(DRAW_TYPE.METEORS_STARS, meteorsAndStars);
 
 export { availableOperators };

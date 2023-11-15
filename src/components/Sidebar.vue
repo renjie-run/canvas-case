@@ -27,7 +27,9 @@ const menus = [
   {
     key: 'case',
     name: '经典案例',
-    examples: [],
+    examples: [
+      { key: DRAW_TYPE.METEORS_STARS, name: '流星&星星特效' },
+    ],
   },
 ];
 </script>
