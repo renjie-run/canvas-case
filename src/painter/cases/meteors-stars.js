@@ -84,7 +84,6 @@ const meteorsAndStars = ({ canvas, canvasWrapper }) => {
 
       // draw star
       context.beginPath();
-      console.log(nextStar)
       const bg = context.createRadialGradient(nextStar.x, nextStar.y, 0, nextStar.x, nextStar.y, nextStar.r);
       bg.addColorStop(0, `rgba(255, 255, 255, ${nextStar.alpha}`);
       bg.addColorStop(1, 'rgba(255, 255, 255, 0');
