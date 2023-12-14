@@ -18,7 +18,8 @@ export const DRAW_TYPE = {
   CACHED_ROUNDS: 'cached_rounds',
 
   // cases
-  METEORS_STARS: 'meteors_stars'
+  METEORS_STARS: 'meteors_stars',
+  GROWING_TREE: 'growing_tree',
 };
 
 export const DEFAULT_DRAW_TYPE = DRAW_TYPE.MOVING_ROUNDS;

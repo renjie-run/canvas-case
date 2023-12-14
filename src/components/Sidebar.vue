@@ -29,6 +29,7 @@ const menus = [
     name: '经典案例',
     examples: [
       { key: DRAW_TYPE.METEORS_STARS, name: '流星&星星特效' },
+      { key: DRAW_TYPE.GROWING_TREE, name: '梦幻生长大树' },
     ],
   },
 ];
