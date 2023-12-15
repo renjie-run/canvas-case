@@ -20,6 +20,7 @@ export const DRAW_TYPE = {
   // cases
   METEORS_STARS: 'meteors_stars',
   GROWING_TREE: 'growing_tree',
+  PARTICLES_LINES: 'particles_lines',
 };
 
 export const DEFAULT_DRAW_TYPE = DRAW_TYPE.MOVING_ROUNDS;

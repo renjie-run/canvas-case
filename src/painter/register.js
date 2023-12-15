@@ -8,6 +8,7 @@ import { transRotate, transScale } from './base/trans-uses';
 import { cachedRounds, movingRounds, randomRounds, roundsFollowingMouse } from './base/random-rounds';
 import { meteorsAndStars } from './cases/meteors-stars';
 import { growingTree } from './cases/growing-tree';
+import { particlesAndLines } from './cases/particles-lines';
 
 let availableOperators = Object.create(null);
 
@@ -33,5 +34,6 @@ registerOperator(DRAW_TYPE.ROUNDS_FOLLOWING_MOUSE, roundsFollowingMouse);
 registerOperator(DRAW_TYPE.CACHED_ROUNDS, cachedRounds);
 registerOperator(DRAW_TYPE.METEORS_STARS, meteorsAndStars);
 registerOperator(DRAW_TYPE.GROWING_TREE, growingTree);
+registerOperator(DRAW_TYPE.PARTICLES_LINES, particlesAndLines);
 
 export { availableOperators };

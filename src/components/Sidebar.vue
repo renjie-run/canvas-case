@@ -30,6 +30,7 @@ const menus = [
     examples: [
       { key: DRAW_TYPE.METEORS_STARS, name: '流星&星星特效' },
       { key: DRAW_TYPE.GROWING_TREE, name: '梦幻生长大树' },
+      { key: DRAW_TYPE.PARTICLES_LINES, name: '动态粒子&线条' },
     ],
   },
 ];

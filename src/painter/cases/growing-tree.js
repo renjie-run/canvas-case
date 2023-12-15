@@ -189,7 +189,7 @@ const growingTree = ({ canvas, canvasWrapper }) => {
 	canvas.height = canvasHeight;
   canvas.style.backgroundColor = '#000';
 
-	const ctx = canvas.getContext("2d");
+	const ctx = canvas.getContext('2d');
 	ctx.globalCompositeOperation = 'lighter';
 
   const tree = new Tree();
