@@ -163,6 +163,7 @@ const particlesAndLines = ({ canvas, canvasWrapper }) => {
 	canvas.height = canvasHeight;
   const ctx = canvas.getContext('2d');
 
+  timeToRecreate = false;
   particles = [];
 
   // Enable repopolate
